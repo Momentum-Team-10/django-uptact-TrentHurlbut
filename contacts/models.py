@@ -21,7 +21,13 @@ class Contact(models.Model):
     zip_code = USZipCodeField(null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 class Note(models.Model):
     text = models.TextField(max_length=255)
     about_contact = models.ForeignKey(Contact, default=None, on_delete=models.CASCADE)
     published_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.about_contact
