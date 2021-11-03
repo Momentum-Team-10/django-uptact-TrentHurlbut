@@ -20,4 +20,4 @@ class ContactForm(forms.ModelForm):
 class NoteForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ['text']
+        fields = ('text',)
