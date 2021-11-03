@@ -41,6 +41,8 @@
         <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">
             Delete Contact
         </a>
+        <br />
+        <a class="red" href="{% url 'add_note' pk=contact.pk %}">Add Note</a>
     </p>
 </div>
 {% endblock %}
