@@ -1,10 +1,8 @@
 {% extends 'base.html' %} 
 {% block content %}
 <h2>Add Note</h2>
-{% if contact %}
 <form action="{% url 'add_note' pk=contact.pk %}" method="POST">
-    {% endif %}
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
+    <button type="submit">Save</button>
 </form>
 {% endblock %}

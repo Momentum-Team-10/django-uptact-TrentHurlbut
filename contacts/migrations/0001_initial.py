@@ -9,22 +9,52 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Contact',
+            name="Contact",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('email', models.EmailField(blank=True, max_length=254, null=True)),
-                ('phone_number', models.CharField(blank=True, max_length=11, null=True, validators=[django.core.validators.RegexValidator(message="Phone number must be entered in the format: '+9999999999'.", regex='^\\+?\\d{10}$')])),
-                ('address_1', models.CharField(blank=True, max_length=255, null=True)),
-                ('address_2', models.CharField(blank=True, max_length=255, null=True)),
-                ('city', models.CharField(blank=True, max_length=255, null=True)),
-                ('state', localflavor.us.models.USStateField(blank=True, max_length=2, null=True)),
-                ('zip_code', localflavor.us.models.USZipCodeField(blank=True, max_length=10, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("email", models.EmailField(blank=True, max_length=254, null=True)),
+                (
+                    "phone_number",
+                    models.CharField(
+                        blank=True,
+                        max_length=11,
+                        null=True,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                message="Phone number must be entered in the format: '+9999999999'.",
+                                regex="^\\+?\\d{10}$",
+                            )
+                        ],
+                    ),
+                ),
+                ("address_1", models.CharField(blank=True, max_length=255, null=True)),
+                ("address_2", models.CharField(blank=True, max_length=255, null=True)),
+                ("city", models.CharField(blank=True, max_length=255, null=True)),
+                (
+                    "state",
+                    localflavor.us.models.USStateField(
+                        blank=True, max_length=2, null=True
+                    ),
+                ),
+                (
+                    "zip_code",
+                    localflavor.us.models.USZipCodeField(
+                        blank=True, max_length=10, null=True
+                    ),
+                ),
             ],
         ),
     ]

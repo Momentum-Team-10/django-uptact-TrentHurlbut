@@ -41,11 +41,13 @@
         <br />
         <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">Delete Contact</a>
         <br />
-        <a class="red" href="{% url 'add_note' pk=contact.pk %}">Add Note</a>
+        <a href="{% url 'add_note' pk=contact.pk %}">Add Note</a>
         <br />
-        <form action="{% url 'delete_notes' pk=contact.pk %}" method="POST">
+        <form action="#" method="POST">
             {% csrf_token %}
-            <button type="submit">Delete Notes</button><br />
+            <div>
+                <button type="submit">Delete Notes</button><br />
+            </div>
             {% endif %}
     </p>
 </div>
