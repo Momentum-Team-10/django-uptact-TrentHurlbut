@@ -7,9 +7,7 @@
     {% for contact in contacts %}
     <div class="w-33 pa3">
         <h2>
-            <a href="{% url 'see_contact' pk=contact.pk %}">
-                {{ contact.name }}
-            </a>
+            <a href="{% url 'see_contact' pk=contact.pk %}">{{ contact.name }}</a>
         </h2>
 
         <div class="flex">
@@ -19,8 +17,7 @@
                 <br />
                 {% if contact.address_2 %} {{ contact.address_2 }}
                 <br />
-                {% endif %} {{ contact.city }}, {{ contact.state }} {{
-                contact.zip_code }}
+                {% endif %} {{ contact.city }}, {{ contact.state }} {{ contact.zip_code }}
             </div>
         </div>
 
@@ -44,9 +41,7 @@
         <p>
             <a href="{% url 'edit_contact' pk=contact.pk %}">Edit Contact</a>
             <br />
-            <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">
-                Delete Contact
-            </a>
+            <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">Delete Contact</a>
         </p>
     </div>
     {% endfor %}

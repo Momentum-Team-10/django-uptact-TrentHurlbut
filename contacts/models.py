@@ -30,4 +30,4 @@ class Note(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return self.about_contact
+        return str(self.about_contact)
