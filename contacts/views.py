@@ -30,7 +30,7 @@ def add_note(request, pk):
         form = NoteForm(data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to='contact_detail')
+            return redirect(to='contacts/contact_detail.html')
     return render(request, 'contacts/add_note.html', {'form': form})
 
 
@@ -61,5 +61,5 @@ def delete_contact(request, pk):
 
 def see_contact(request, pk):
     contact = get_object_or_404(Contact, pk=pk)
-    note = get_object_or_404(Note, about_contact=pk)
+    note = get_object_or_404(Note)
     return render(request, 'contacts/contact_detail.html', {'contact':contact, 'note':note})
